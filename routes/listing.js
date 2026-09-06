@@ -1,0 +1,53 @@
+const express = require("express");
+const router = express.Router();
+const wrapAsync = require("../utils/wrapAsync.js")
+const {isLoggedIn, isOwner, validateListing, isReviewAuthor} = require("../middleware.js");
+const Listing = require("../models/listings");
+const listingController = require("../controllers/listings.js");
+const multer  = require('multer')
+const {storage} = require("../cloudConfig.js")
+const upload = multer({ storage });
+
+
+// All listings Routes
+router
+    .route("/")
+    .get(wrapAsync(listingController.index))
+    .post( 
+        isLoggedIn,
+        upload.single('listing[image]'),
+        validateListing,
+        wrapAsync(listingController.createListing)
+    );
+    
+
+// New Route
+router.get("/new",isLoggedIn, listingController.renderNewForm);
+
+//update and delete route
+router
+    .route("/:id")
+    .get(validateListing,wrapAsync(listingController.showListing))
+    .put(
+        isLoggedIn,
+        isOwner,
+        upload.single("listing[image]"),
+        validateListing,
+        wrapAsync(listingController.updateListing)
+    )
+    .delete( 
+    isLoggedIn,
+    isOwner,
+    isReviewAuthor,
+    wrapAsync(listingController.destroyListing));
+
+
+
+// Edit
+router.get("/:id/edit", 
+    isLoggedIn,
+    isOwner,
+    wrapAsync(listingController.renderEditForm));
+
+
+module.exports = router;
