@@ -1,6 +1,18 @@
+const map = L.map("map").setView(
+    [coordinates[1], coordinates[0]],
+    9
+);
 
-const map = L.map("map").setView([12.9716, 77.5946], 9);
-
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    attribution: '&copy; OpenStreetMap contributors'
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 9,
+    attribution: "&copy; OpenStreetMap contributors"
 }).addTo(map);
+
+const marker = L.marker(
+    [coordinates[1], coordinates[0]]
+)
+.bindPopup(
+    `<h4>${listingLocation}</h4>
+     <p>Exact Location will be provided after booking</p>`
+)
+.addTo(map);

@@ -11,6 +11,8 @@ A full-stack travel listing platform where users can discover, create, manage, a
 - Client-side form validation
 - Image upload and storage
 - Display uploaded listing images
+- Geocoding for listing locations
+- Interactive maps with listing markers and popups
 
 ### User Authentication & Authorization
 - User registration and login
@@ -45,9 +47,17 @@ A full-stack travel listing platform where users can discover, create, manage, a
 
 ### Image Management
 - Image uploads using Multer
+- Image preview while editing listings
 - Cloudinary integration for image storage
 - Image URLs stored in MongoDB
 - Uploaded images displayed in listings
+
+### Maps & Location
+- Interactive maps using Leaflet
+- Geocoding of listing locations
+- Storing geographic coordinates
+- Map markers for listings
+- Informative map popups
 
 ## 🛠️ Tech Stack
 
@@ -73,6 +83,7 @@ A full-stack travel listing platform where users can discover, create, manage, a
 - Cloudinary
 - Multer
 - Multer Storage Cloudinary
+- Leaflet
 - Joi
 - Cookie Parser
 - Connect Flash
@@ -136,8 +147,6 @@ Screenshots will be added as the project progresses.
 
 ## 🔮 Future Improvements
 
-- Interactive maps and location-based features
-- Geocoding and location integration
 - Additional search and filtering functionality
 - Further UI and performance improvements
 
