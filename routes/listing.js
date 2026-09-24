@@ -38,7 +38,6 @@ router
     .delete( 
     isLoggedIn,
     isOwner,
-    isReviewAuthor,
     wrapAsync(listingController.destroyListing));
 
 

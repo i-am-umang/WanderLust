@@ -16,3 +16,4 @@ const marker = L.marker(
      <p>Exact Location will be provided after booking</p>`
 )
 .addTo(map);
+
