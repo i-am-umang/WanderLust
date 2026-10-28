@@ -154,5 +154,5 @@ Screenshots will be added as the project progresses.
 
 **Umang Agarwal**
 
-GitHub: [i-am-umang](https://github.com/i-am-umang)
-Hosted live link : https://wanderlust-t8ia.onrender.com
+GitHub: [i-am-umang](https://github.com/i-am-umang)<br>
+Hosted live link: https://wanderlust-t8ia.onrender.com
